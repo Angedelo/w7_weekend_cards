@@ -20,7 +20,7 @@ Cards.prototype.bindEvents = function () {
     const singleCard = [];
     singleCard.push(this.cards[cardIndex]);
     // console.log(singleCard);
-    PubSub.publish('Cards:all-cards', singleCard);
+    PubSub.publish('Cards:one-card', singleCard);
   });
 };
 

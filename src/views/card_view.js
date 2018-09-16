@@ -6,10 +6,10 @@ const CardView = function (card, element) {
 };
 
 CardView.prototype.render = function () {
-  const title = new Append('h2', this.card.title, this.element)
-  const type_code = new Append('p', this.card.type_code, this.element)
-  const keywords = new Append('p', this.card.keywords, this.element)
-  const text = new Append('p', this.card.text, this.element)
+  const title = new Append('h2', `Card Name: ${this.card.title}`, this.element)
+  const type_code = new Append('p', `Type: ${this.card.type_code}`, this.element)
+  const keywords = new Append('p', `Keywords: ${this.card.keywords}`, this.element)
+  const text = new Append('p', `Card Text: ${this.card.text}`, this.element)
 };
 
 module.exports = CardView;

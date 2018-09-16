@@ -6,7 +6,7 @@ const CardWrapper = function (element) {
 };
 
 CardWrapper.prototype.bindEvents = function () {
-  PubSub.subscribe('Cards:all-cards', (event) => {
+  PubSub.subscribe('Cards:one-card', (event) => {
     const filteredCardData = event.detail;
     this.renderCardView(filteredCardData);
   });
