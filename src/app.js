@@ -5,6 +5,7 @@ const SelectView = require('./views/select_view.js')
 document.addEventListener('DOMContentLoaded', () => {
   const cards = new Cards;
   cards.getData();
+  cards.bindEvents();
   const selectElement = document.querySelector('.select-card')
   const selectView = new SelectView(selectElement);
   selectView.bindEvents();

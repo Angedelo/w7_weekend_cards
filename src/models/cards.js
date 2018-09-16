@@ -13,6 +13,17 @@ Cards.prototype.getData = function () {
   });
 };
 
+Cards.prototype.bindEvents = function () {
+  PubSub.subscribe('SelectView:card-index', (event) => {
+    const cardIndex = event.detail;
+    // console.log(CardIndex);
+    const singleCard = [];
+    singleCard.push(this.cards[cardIndex]);
+    // console.log(singleCard);
+    PubSub.publish('Cards:all-cards', singleCard);
+  });
+};
+
 Cards.prototype.handleData = function (allCards) {
   allCards.map((card, index) => {
     return this.cards[index] = {

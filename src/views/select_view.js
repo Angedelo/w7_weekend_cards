@@ -11,12 +11,20 @@ SelectView.prototype.bindEvents = function () {
     // console.log(cardsReady);
     this.populateSelect(cardsReady);
   });
+
+  this.selectElement.addEventListener('change', (event) => {
+    const chosenCardIndex = event.target.value;
+    PubSub.publish('SelectView:card-index', chosenCardIndex);
+  });
 };
 
+
+
 SelectView.prototype.populateSelect = function (cards) {
-  cards.forEach((card) => {
+  cards.forEach((card, index) => {
     // console.log(card);
     const option = new Append('option', card.title, this.selectElement);
+    option.value = index;
   });
 };
 
